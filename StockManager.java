@@ -67,7 +67,7 @@ public class StockManager
         int numProductos = 0;
         for (Product producto : stock) {
             if (id == producto.getID()){
-                numProductos++;
+                numProductos = producto.getQuantity();
             }
         }
         return numProductos;
