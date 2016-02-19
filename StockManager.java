@@ -26,19 +26,11 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        int index = 0;
-        boolean mismoNumero = true;
-        while (mismoNumero == true && index < stock.size()) {
-            if (stock.get(index).getID() == item.getID()) {
-                mismoNumero = false;
-                System.out.println("Error. Ya hay un producto con esa misma Id");
-            }
-            else {
-                index++;
-            }
-        }
-        if (mismoNumero == true) {
+        if (findProduct(item.getID()) == null) {
             stock.add(item);
+        }
+        else {
+            System.out.println("ERROR. Ya existe un producto en stock con el mismo id");
         }
     }
 
