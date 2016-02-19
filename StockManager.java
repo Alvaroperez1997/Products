@@ -121,4 +121,22 @@ public class StockManager
             }
         }
     }
+    
+    /**
+     * Metodo que permite buscar un producto por su descripcion
+     */
+    public Product findProduct(String name) 
+    {
+        Product producto = null;
+        int index = 0;
+        boolean encontrado = false;
+        while(!encontrado && index < stock.size()) {
+            if (stock.get(index).getName().equals(name)) {
+                producto = stock.get(index);
+                encontrado = true;
+            }
+            index++;
+        }
+        return producto;
+    }
 }
